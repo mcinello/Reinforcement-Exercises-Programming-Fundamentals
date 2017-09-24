@@ -58,3 +58,7 @@ east_trains = get_trains(train_info, "east")
 
 puts north_trains
 puts east_trains
+
+# answer 7
+train_info.first[:first_departure_time] = 5
+puts train_info.first
