@@ -16,6 +16,8 @@ direction_610 = ""
 north_trains = []
 east_trains = []
 
+
+# answers 1, 2, 3
 train_info.each do |current_train|
   if current_train[:train] == "111"
     direction_111 = current_train[:direction]
@@ -24,12 +26,35 @@ train_info.each do |current_train|
   elsif current_train[:train] == "610"
     direction_610 = current_train[:direction]
   end
+end
+
+# answer 4
+train_info.each do |current_train|
   if current_train[:direction] == "north"
     north_trains.push current_train[:train]
-  elsif current_train[:direction] == "east"
+  end
+end
+
+# answer 5
+train_info.each do |current_train|
+  if current_train[:direction] == "east"
     east_trains.push current_train[:train]
   end
 end
+
+# answer 6
+def get_trains(trains, direction)
+  train_list = []
+  trains.each do |train|
+    if train[:direction] == direction
+      train_list.push train[:train]
+    end
+  end
+  return train_list
+end
+
+north_trains = get_trains(train_info, "north")
+east_trains = get_trains(train_info, "east")
 
 puts north_trains
 puts east_trains
