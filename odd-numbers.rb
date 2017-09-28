@@ -4,4 +4,10 @@ odd_numbers = []
 
 odd_numbers = numbers.values_at(* numbers.each_index.select(&:even?))
 
-puts odd_numbers.inspect
+sum = 0
+
+odd_numbers.each do |num|
+  sum += num
+end
+
+puts sum
