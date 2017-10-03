@@ -17,3 +17,11 @@ room_info = { data: { rooms:
 capacity_201 = room_info[:data][:rooms].first[:capacity]
 
 puts capacity_201
+
+event_201 = room_info[:data][:events].first
+
+if event_201[:attendees] <= 50
+  puts "Ok"
+else
+  puts "Not ok"
+end
