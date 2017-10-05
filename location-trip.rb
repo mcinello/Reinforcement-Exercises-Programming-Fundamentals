@@ -31,9 +31,9 @@ class Trip < Location
   def self.list_of_locations
     puts "Began trip."
 
-    @@trip.each_cons(2) do |location|
-      
-      puts "Travelled from #{location} to #{location}"
+    @@trip.each_cons(2).map do |first, second|
+
+      puts "Travelled from #{first.name} to #{second.name}"
     end
 
     puts "Ended Trip."
