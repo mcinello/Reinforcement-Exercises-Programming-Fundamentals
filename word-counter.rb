@@ -1,6 +1,5 @@
 def word_counter(string)
-  word_array = string.split
-  puts word_array.length
+  puts string.split.length
 end
 
 word_counter("Hello world") # returns 2
