@@ -10,10 +10,19 @@ inside each key's hash, will have english and french as keys, and the translatio
 turn all of them into hashes
 =end
 
-digit_hash = Hash[digits.each_slice(1).to_a]
+# digit_hash = Hash[digits.each_slice(1).to_a]
+
+digit_hash = Hash[digits.map {|d| [d.to_i, nil]}]
+
+# en_hash = Hash.new []
+#
+#   en.each do |tr|
+#     en_hash[:english] += [tr]
+#   end
+#
 
 puts digit_hash
-
+# puts en.inspect
 
 # digits.map { |n|
 #   n.include?(',')?
