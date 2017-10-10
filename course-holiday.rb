@@ -91,6 +91,8 @@ class Cohort
 
 end
 
-robocop = Cohort.new("September 11, 2017")
+robocop = Cohort.new(Date.new(2017,9,11))
 
 puts robocop.inspect
+puts robocop.coffee_code_days
+puts robocop.class_days
