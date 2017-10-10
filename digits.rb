@@ -8,22 +8,18 @@ the number elements become the keys to digits, and have their own hash
 inside each key's hash, will have english and french as keys, and the translations as values
 
 turn all of them into hashes
+
+they can be accessed by INDEX
 =end
 
-# digit_hash = Hash[digits.each_slice(1).to_a]
+digits_hash = {}
 
-digit_hash = Hash[digits.map {|d| [d.to_i, nil]}]
+# def translate_digits(lang, arr)
+  digits.each_with_index do |index, value|
+    digits_hash[index.to_i] = {english: en[value]}
+  end
+# end
 
-# en_hash = Hash.new []
-#
-#   en.each do |tr|
-#     en_hash[:english] += [tr]
-#   end
-#
+# digits_hash.translate_digits("english", en)
 
-puts digit_hash
-# puts en.inspect
-
-# digits.map { |n|
-#   n.include?(',')?
-#   (n.split /, /) : n
+puts digits_hash
