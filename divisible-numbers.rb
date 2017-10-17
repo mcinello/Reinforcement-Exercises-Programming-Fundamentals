@@ -28,12 +28,14 @@ numbers = (1..50).each_with_object({}) { |num, hash| hash[num] = num}
 
 def divisible_values(hash)
   hash.each do |key, val|
-    if hash[key]%2==0
+    if hash[key]%2==0 && hash[key]%7==0
+    hash[key] = (val * 2)
+    elsif hash[key]%2==0
       hash[key] = (val += 1)
     elsif hash[key]%7==0
       hash[key] = (val -= 1)
-  #   elsif key%2==0 && key%7==0
-  #     val = (val * 2)
+    else
+      hash[key] = (val = hash[key])
     end
   end
 end
