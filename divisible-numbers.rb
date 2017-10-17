@@ -30,8 +30,8 @@ def divisible_values(hash)
   hash.each do |key, val|
     if hash[key]%2==0
       hash[key] = (val += 1)
-  #   elsif key%7==0
-  #   val -= 1
+    elsif hash[key]%7==0
+      hash[key] = (val -= 1)
   #   elsif key%2==0 && key%7==0
   #     val = (val * 2)
     end
