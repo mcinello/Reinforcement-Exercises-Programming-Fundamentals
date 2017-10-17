@@ -26,7 +26,28 @@
 
 numbers = (1..50).each_with_object({}) { |num, hash| hash[num] = num}
 
-puts numbers.inspect
+def divisible_values(hash)
+  hash.each do |key, val|
+    if hash[key]%2==0
+      hash[key] = (val += 1)
+  #   elsif key%7==0
+  #   val -= 1
+  #   elsif key%2==0 && key%7==0
+  #     val = (val * 2)
+    end
+  end
+end
+
+puts divisible_values(numbers)
+
+=begin
+if number%2==0
+  value += 1
+elsif number%7==0
+value -= 1
+elsif number%2==0 %% number%7==0
+value = (value * 2)
+=end
 
 
 # Write code to generate a hash where the keys are the numbers from 1 to 50 and the values follow these rules:
