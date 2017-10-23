@@ -2,7 +2,8 @@ def check_syntax(str)
   openables = {
     "(" => ")",
     "[" => "]",
-    "{" => "}"
+    "{" => "}",
+    "<" => ">"
   }
   open = []
   opening_chars = openables.keys
@@ -46,12 +47,22 @@ def check_syntax(str)
   return open.empty?
 end
 
-puts check_syntax("(this)[] is some text")
+# puts check_syntax("(this)[] is some text")
+# puts "*****"
+# puts check_syntax("(this)] is some text")
+# puts "*****"
+# puts check_syntax("[(this] is some text")
+# puts "*****"
+# puts check_syntax("[this][ is some text")
+# puts "*****"
+# puts check_syntax("[this] is some text")
+# puts "*****"
+puts check_syntax("<html> (this)[] is some text</html>")
 puts "*****"
-puts check_syntax("(this)] is some text")
+puts check_syntax("<html> (this)] is some text</html>")
 puts "*****"
-puts check_syntax("[(this] is some text")
+puts check_syntax("<html> [(this] is some text</html>")
 puts "*****"
-puts check_syntax("[this][ is some text")
+puts check_syntax("<html> [this][ is some text</html>")
 puts "*****"
-puts check_syntax("[this] is some text")
+puts check_syntax("<html> [this] is some text</html")
