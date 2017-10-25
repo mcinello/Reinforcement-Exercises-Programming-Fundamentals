@@ -10,9 +10,9 @@ def display_events(city)
   city.each do |event|
     puts "#{event[:city]}"
     puts "------------"
-      event[:events].each do |details|
-        puts "Date: #{details[:date]}, #{details[:attendees]} people"
-      end
+    event[:events].each do |details|
+      puts "Date: #{details[:date]}, #{details[:attendees]} people"
+    end
     puts
   end
 end
