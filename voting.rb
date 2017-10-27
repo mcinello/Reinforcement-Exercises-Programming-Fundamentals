@@ -29,7 +29,6 @@ def tally_results(ballots)
       break
     end
   end
-
 end
 
 tally_results(ballots)
